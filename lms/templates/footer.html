@@ -10,23 +10,30 @@
 <% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
 <%namespace name='static' file='static_content.html'/>
 
-% if uses_bootstrap:
-  <div class="container-fluid wrapper-footer">
-    <footer>
-      <div class="row">
-        <div class="col-md-9">
-          {% if INDIGO_FOOTER_NAV_LINKS %}
-          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
-            <ul class="navbar-nav">
-              {% for link in INDIGO_FOOTER_NAV_LINKS %}
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgb(6, 98, 4);">
+      © 2023 Copyright:
+    </div>
+
+    <% if uses_bootstrap %>
+    <div class="container-fluid wrapper-footer">
+      <footer>
+        <div class="row">
+          <div class="col-md-9">
+            <% if INDIGO_FOOTER_NAV_LINKS %>
+            <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
+              <ul class="navbar-nav">
+                <% for link in INDIGO_FOOTER_NAV_LINKS %>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ link['url'] }}">{{ link['title'] }}</a>
                 </li>
-              {% endfor %}
-            </ul>
-          </nav>
-          {% endif %}
+                <% endfor %>
+              </ul>
+            </nav>
+            <% endif %>
+          </div>
         </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
+    <% endif %>
+  </footer>
