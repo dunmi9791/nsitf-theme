@@ -1,20 +1,7 @@
-## mako
-<%page expression_filter="h"/>
-<%!
-  from django.urls import reverse
-  from django.utils.translation import gettext as _
-  from lms.djangoapps.branding.api import get_footer
-  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
-%>
-<% footer = get_footer(is_secure=is_secure) %>
-<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
-<%namespace name='static' file='static_content.html'/>
 
-% if uses_bootstrap:
 
 <footer class="bg-light text-center text-lg-start">
     <div class="text-center p-3" style="background-color: rgb(6, 98, 4);">
       © 2023 Copyright:
     </div>
-    <% endif %>
   </footer>
