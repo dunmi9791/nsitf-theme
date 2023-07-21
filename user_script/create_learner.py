@@ -1,7 +1,7 @@
 import csv
 import subprocess
 
-csv_file = "users.csv"
+csv_file = "support_users.csv"
 
 with open(csv_file, "r") as file:
     reader = csv.reader(file)
